@@ -16,5 +16,10 @@ namespace BasicCalculator
         {
             InitializeComponent();
         }
+
+        private void UserInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

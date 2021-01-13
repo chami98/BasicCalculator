@@ -33,7 +33,6 @@ namespace BasicCalculator
             this.CalculationResultBox = new System.Windows.Forms.Label();
             this.ButtonsPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CEButton = new System.Windows.Forms.Button();
-            this.CButton = new System.Windows.Forms.Button();
             this.DelButton = new System.Windows.Forms.Button();
             this.PercentageButton = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -101,7 +100,6 @@ namespace BasicCalculator
             this.ButtonsPanel.Controls.Add(this.PercentageButton, 3, 0);
             this.ButtonsPanel.Controls.Add(this.DelButton, 2, 0);
             this.ButtonsPanel.Controls.Add(this.CEButton, 0, 0);
-            this.ButtonsPanel.Controls.Add(this.CButton, 1, 0);
             this.ButtonsPanel.Location = new System.Drawing.Point(15, 102);
             this.ButtonsPanel.Name = "ButtonsPanel";
             this.ButtonsPanel.RowCount = 5;
@@ -123,16 +121,6 @@ namespace BasicCalculator
             this.CEButton.TabIndex = 0;
             this.CEButton.Text = "CE";
             this.CEButton.UseVisualStyleBackColor = true;
-            // 
-            // CButton
-            // 
-            this.CButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CButton.Location = new System.Drawing.Point(116, 3);
-            this.CButton.Name = "CButton";
-            this.CButton.Size = new System.Drawing.Size(107, 65);
-            this.CButton.TabIndex = 1;
-            this.CButton.Text = "C";
-            this.CButton.UseVisualStyleBackColor = true;
             // 
             // DelButton
             // 
@@ -308,8 +296,10 @@ namespace BasicCalculator
             // 
             // Form1
             // 
+            this.AcceptButton = this.equalButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CEButton;
             this.ClientSize = new System.Drawing.Size(482, 473);
             this.Controls.Add(this.ButtonsPanel);
             this.Controls.Add(this.CalculationResultBox);
@@ -330,7 +320,6 @@ namespace BasicCalculator
         private System.Windows.Forms.TableLayoutPanel ButtonsPanel;
         private System.Windows.Forms.Button CEButton;
         private System.Windows.Forms.Button DelButton;
-        private System.Windows.Forms.Button CButton;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button PercentageButton;

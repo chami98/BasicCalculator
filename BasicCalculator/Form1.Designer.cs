@@ -33,6 +33,8 @@ namespace BasicCalculator
             this.CalculationResultBox = new System.Windows.Forms.Label();
             this.ButtonsPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CEButton = new System.Windows.Forms.Button();
+            this.CButton = new System.Windows.Forms.Button();
+            this.DelButton = new System.Windows.Forms.Button();
             this.ButtonsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +45,7 @@ namespace BasicCalculator
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UserInput.Location = new System.Drawing.Point(12, 39);
             this.UserInput.Name = "UserInput";
-            this.UserInput.Size = new System.Drawing.Size(300, 22);
+            this.UserInput.Size = new System.Drawing.Size(458, 22);
             this.UserInput.TabIndex = 0;
             this.UserInput.TextChanged += new System.EventHandler(this.UserInput_TextChanged);
             // 
@@ -65,7 +67,9 @@ namespace BasicCalculator
             this.ButtonsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.ButtonsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.ButtonsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.ButtonsPanel.Controls.Add(this.DelButton, 2, 0);
             this.ButtonsPanel.Controls.Add(this.CEButton, 0, 0);
+            this.ButtonsPanel.Controls.Add(this.CButton, 1, 0);
             this.ButtonsPanel.Location = new System.Drawing.Point(15, 102);
             this.ButtonsPanel.Name = "ButtonsPanel";
             this.ButtonsPanel.RowCount = 5;
@@ -74,7 +78,7 @@ namespace BasicCalculator
             this.ButtonsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.ButtonsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.ButtonsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.ButtonsPanel.Size = new System.Drawing.Size(297, 209);
+            this.ButtonsPanel.Size = new System.Drawing.Size(455, 359);
             this.ButtonsPanel.TabIndex = 2;
             this.ButtonsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -83,19 +87,40 @@ namespace BasicCalculator
             this.CEButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CEButton.Location = new System.Drawing.Point(3, 3);
             this.CEButton.Name = "CEButton";
-            this.CEButton.Size = new System.Drawing.Size(68, 35);
+            this.CEButton.Size = new System.Drawing.Size(107, 65);
             this.CEButton.TabIndex = 0;
             this.CEButton.Text = "CE";
             this.CEButton.UseVisualStyleBackColor = true;
+            // 
+            // CButton
+            // 
+            this.CButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CButton.Location = new System.Drawing.Point(116, 3);
+            this.CButton.Name = "CButton";
+            this.CButton.Size = new System.Drawing.Size(107, 65);
+            this.CButton.TabIndex = 1;
+            this.CButton.Text = "C";
+            this.CButton.UseVisualStyleBackColor = true;
+            // 
+            // DelButton
+            // 
+            this.DelButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DelButton.Location = new System.Drawing.Point(229, 3);
+            this.DelButton.Name = "DelButton";
+            this.DelButton.Size = new System.Drawing.Size(107, 65);
+            this.DelButton.TabIndex = 2;
+            this.DelButton.Text = "Del";
+            this.DelButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 323);
+            this.ClientSize = new System.Drawing.Size(482, 473);
             this.Controls.Add(this.ButtonsPanel);
             this.Controls.Add(this.CalculationResultBox);
             this.Controls.Add(this.UserInput);
+            this.MinimumSize = new System.Drawing.Size(500, 520);
             this.Name = "Form1";
             this.Text = "Basic Calculator";
             this.ButtonsPanel.ResumeLayout(false);
@@ -110,6 +135,8 @@ namespace BasicCalculator
         private System.Windows.Forms.Label CalculationResultBox;
         private System.Windows.Forms.TableLayoutPanel ButtonsPanel;
         private System.Windows.Forms.Button CEButton;
+        private System.Windows.Forms.Button DelButton;
+        private System.Windows.Forms.Button CButton;
     }
 }
 

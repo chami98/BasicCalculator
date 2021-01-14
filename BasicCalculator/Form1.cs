@@ -58,46 +58,64 @@ namespace BasicCalculator
         private void button8_Click(object sender, EventArgs e)
         {
             InsertTextValue("8");
+
+            FocusInputText();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             InsertTextValue("4");
+
+            FocusInputText();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             InsertTextValue("5");
+
+            FocusInputText();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             InsertTextValue("6");
+
+            FocusInputText();
         }
 
         private void button1_Click_2(object sender, EventArgs e)
         {
             InsertTextValue("1");
+
+            FocusInputText();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             InsertTextValue("2");
+
+            FocusInputText();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             InsertTextValue("3");
+
+            FocusInputText();
         }
 
         private void button0_Click(object sender, EventArgs e)
         {
             InsertTextValue("0");
+
+            FocusInputText();
         }
 
         private void dotButton_Click(object sender, EventArgs e)
         {
             InsertTextValue(".");
+
+            FocusInputText();
         }
 
         private void equalButton_Click(object sender, EventArgs e)
@@ -109,28 +127,37 @@ namespace BasicCalculator
 
         private void CalculateEquation()
         {
-            
+            FocusInputText();
+
         }
 
         #region Operator Functions
         private void PercentageButton_Click(object sender, EventArgs e)
         {
             InsertTextValue("%");
+
+            FocusInputText();
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
             InsertTextValue("+");
+
+            FocusInputText();
         }
 
         private void subtractButton_Click(object sender, EventArgs e)
         {
             InsertTextValue("-");
+
+            FocusInputText();
         }
 
         private void MultiplyButton_Click(object sender, EventArgs e)
         {
             InsertTextValue("X");
+
+            FocusInputText();
         }
         #endregion
 
@@ -142,7 +169,17 @@ namespace BasicCalculator
 
         private void InsertTextValue(string value)
         {
+            //Remember selection start
+            var selectionStart = this.UserInput.SelectionStart;
+            
+            // set new text
             this.UserInput.Text = this.UserInput.Text.Insert(this.UserInput.SelectionStart, value);
+
+            //restore the selection start
+            this.UserInput.SelectionStart = selectionStart + value.Length;
+            
+            //set selection length to zero
+            this.UserInput.SelectionLength = 0;
         }
         #endregion
     }

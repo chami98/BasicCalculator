@@ -134,11 +134,7 @@ namespace BasicCalculator
 
         #endregion
 
-        private void CalculateEquation()
-        {
-            
-
-        }
+       
 
         #region Operator Functions
         private void PercentageButton_Click(object sender, EventArgs e)
@@ -211,7 +207,14 @@ namespace BasicCalculator
             this.UserInput.SelectionLength = 0;
         }
 
+        private void CalculateEquation()
+        {
+            var userInput = this.UserInput.Text;
 
+
+            FocusInputText();
+
+        }
         #endregion
     }
 }

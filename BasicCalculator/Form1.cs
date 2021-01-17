@@ -30,11 +30,17 @@ namespace BasicCalculator
         private void button1_Click(object sender, EventArgs e)
         {
             InsertTextValue("7");
+
+            FocusInputText();
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             InsertTextValue("9");
+
+            FocusInputText();
+              
         }
 
         #region clearing methods
@@ -46,11 +52,11 @@ namespace BasicCalculator
 
         private void DelButton_Click(object sender, EventArgs e)
         {
-            if (this.UserInput.Text.Length < this.UserInput.SelectionStart + 1)
-                return;
-                this.UserInput.Text = this.UserInput.Text.Remove(this.UserInput.SelectionStart, 1);
-            
-            
+            DeleteTextValue();
+
+            FocusInputText();
+
+
         }
         #endregion 
         #region number methods
@@ -121,13 +127,16 @@ namespace BasicCalculator
         private void equalButton_Click(object sender, EventArgs e)
         {
             CalculateEquation();
+
+            FocusInputText();
+
         }
 
         #endregion
 
         private void CalculateEquation()
         {
-            FocusInputText();
+            
 
         }
 
@@ -181,6 +190,28 @@ namespace BasicCalculator
             //set selection length to zero
             this.UserInput.SelectionLength = 0;
         }
+
+
+        private void DeleteTextValue()
+        {
+
+            if (this.UserInput.Text.Length < this.UserInput.SelectionStart + 1)
+            return;
+
+            //Remember selection start
+            var selectionStart = this.UserInput.SelectionStart;
+
+            this.UserInput.Text = this.UserInput.Text.Remove(this.UserInput.SelectionStart, 1);
+
+          
+            //restore the selection start
+            this.UserInput.SelectionStart = selectionStart;
+
+            //set selection length to zero
+            this.UserInput.SelectionLength = 0;
+        }
+
+
         #endregion
     }
 }

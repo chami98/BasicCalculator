@@ -31,12 +31,18 @@ namespace BasicCalculator
         // the inner operation  to be performed initially before this opertaion 
 
         public Operation InnerOperation { get; set; }
-      
+
         #endregion
 
+
+        #region constructor
         public Operation()
         {
-
+            //create empty strings insted of having nulls
+            this.LeftSide = string.Empty;
+            this.RightSide = string.Empty;  
         }
+
+        #endregion
     }
 }
